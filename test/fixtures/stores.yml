@@ -1,0 +1,68 @@
+# == Schema Information
+#
+# Table name: stores
+#
+#  id           :integer          not null, primary key
+#  name         :string
+#  address      :string
+#  longitude    :float
+#  latitude     :float
+#  headline     :string
+#  images       :string
+#  price        :decimal(, )
+#  bio          :string
+#  email        :string
+#  number       :text
+#  website      :string
+#  facebook     :string
+#  instagram    :string
+#  snapchat     :string
+#  twitter      :string
+#  extra_link   :string
+#  category     :string
+#  sub_category :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5
+  headline: MyString
+  images: MyString
+  price: 9.99
+  bio: MyString
+  email: MyString
+  number: MyText
+  website: MyString
+  facebook: MyString
+  instagram: MyString
+  snapchat: MyString
+  twitter: MyString
+  extra_link: MyString
+  category: MyString
+  sub_category: MyString
+
+two:
+  name: MyString
+  address: MyString
+  longitude: 1.5
+  latitude: 1.5
+  headline: MyString
+  images: MyString
+  price: 9.99
+  bio: MyString
+  email: MyString
+  number: MyText
+  website: MyString
+  facebook: MyString
+  instagram: MyString
+  snapchat: MyString
+  twitter: MyString
+  extra_link: MyString
+  category: MyString
+  sub_category: MyString
