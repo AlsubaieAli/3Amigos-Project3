@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment = current_user.create(comment_params)
+    comment = current_user.comments.create(comment_params)
     redirect_to request.referrer
   end
 
@@ -17,12 +17,12 @@ class CommentsController < ApplicationController
   end
 
   def update
-    comment = current_user.create(comment_params)
+    comment = current_user.comments.create(comment_params)
     redirect_to request.referrer
   end
 
   def destroy
-    comment = current_user.find_by(id: params[:id])
+    comment = current_user.comments.find_by(id: params[:id])
     comment.destroy
     redirect_to request.referrer
   end

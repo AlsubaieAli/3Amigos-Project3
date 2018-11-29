@@ -17,3 +17,12 @@
 <hr>
 <h5>Tagged With</h5>
 <h6><%= @store.sub_category %></h6>
+<hr>
+<h5>Comments:</h5>
+<% @store.comments.each do |comment| %>
+  <p><%= comment.content %> <strong>-<%= comment.user.name%></strong></p>
+<% end %>
+<% if user_signed_in? %>
+  <hr>
+  <%= render partial: 'comments/form' %>
+<% end %>

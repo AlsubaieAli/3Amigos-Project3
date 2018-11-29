@@ -1,5 +1,5 @@
 <% @stores.each do |store| %>
 <div class="store-div">
-  <h2><%= store.name %></h2>
+  <h2><%= link_to store.name, store %></h2>
 </div>
 <% end %>

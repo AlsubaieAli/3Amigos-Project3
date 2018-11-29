@@ -5,6 +5,7 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find_by(id: params[:id])
+    @comments = Comment.new
   end
 
   def new
