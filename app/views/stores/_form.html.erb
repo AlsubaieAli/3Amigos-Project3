@@ -1,0 +1,55 @@
+<%= form_for @store do |f| %>
+   <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+    <div>
+    <%= f.label :headline %>
+    <%= f.text_field :headline %>
+  </div>
+    <div>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+    <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+    <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+    <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+    <div>
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+    <div>
+    <%= f.label :website %>
+    <%= f.url_field :website %>
+  </div>
+    <div>
+    <%= f.label :twitter %>
+    <%= f.url_field :twitter %>
+  </div>
+    <div>
+    <%= f.label :instagram %>
+    <%= f.url_field :instagram %>
+  </div>
+    <div>
+    <%= f.label :snapchat %>
+    <%= f.url_field :snapchat %>
+  </div>
+   <div>
+    <%= f.label :facebook %>
+    <%= f.url_field :facebook %>
+  </div>
+   <div>
+    <%= f.label :extra_link %>
+    <%= f.url_field :extra_link %>
+  </div>
+   <%= f.submit %>
+<% end %>

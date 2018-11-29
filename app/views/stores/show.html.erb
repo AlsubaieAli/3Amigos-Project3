@@ -1,2 +1,19 @@
-<h1>Stores#show</h1>
-<p>Find me in app/views/stores/show.html.erb</p>
+<h1><%= @store.name %></h1>
+<h3><%= @store.headline %></h3>
+<hr>
+<p><%= @store.address %></p>
+<p><%= @store.bio %></p>
+<p><%= @store.price %></p>
+<a href="<%= @store.website %>"></a>
+<div class="contact-info">
+<p><a href="tel:<%= @store.number %>">Call Us</a></p>
+<p><a href="mailto:<%= @store.email %>">Email Us</a></p>
+<p>Facebook: <a href="<%= @store.facebook %>"></a></p>
+<p>Snapchat: <a href="<%= @store.snapchat %>"></a></p>
+<p>Instagram: <a href="<%= @store.instagram %>"></a></p>
+<p>Twitter: <a href="<%= @store.twitter %>"></a></p>
+</div>
+
+<hr>
+<h5>Tagged With</h5>
+<h6><%= @store.sub_category %></h6>
