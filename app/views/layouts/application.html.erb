@@ -17,19 +17,19 @@
           <a href="/" rel="noopener noreferrer">Home</a>
         </li>
         <li>
-          <a href="#" rel="noopener noreferrer">Places</a>
+          <%= link_to 'Places', '/stores?category=place' %>
         </li>
         <li>
-          <a href="#" rel="noopener noreferrer">Food</a>
+          <%= link_to 'Foods', '/stores?category=food' %>
         </li>
         <li>
-          <a href="#" rel="noopener noreferrer">Activities</a>
+          <%= link_to 'Activities', '/stores?category=activity' %>
         </li>
         <li>
-          <a href="#" rel="noopener noreferrer">Decoration</a>
+          <%= link_to 'Decorations', '/stores?category=decor' %>
         </li>
         <li>
-          <a href="#" rel="noopener noreferrer">Staff</a>
+          <%= link_to 'Staff', '/stores?category=staff' %>
         </li>
         <% if user_signed_in? %>
           <li>
