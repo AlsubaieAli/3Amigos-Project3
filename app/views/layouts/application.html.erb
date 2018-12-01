@@ -12,31 +12,31 @@
   <body>
     <h1>Party Planner</h1>
     <nav class="main-nav">
-      <ul>
-        <li>
+      <ul class="main-nav__ul">
+        <li class="main-nav__li">
           <a href="/" rel="noopener noreferrer">Home</a>
         </li>
-        <li>
+        <li class="main-nav__li">
           <%= link_to 'Places', '/stores?category=place' %>
         </li>
-        <li>
+        <li class="main-nav__li">
           <%= link_to 'Foods', '/stores?category=food' %>
         </li>
-        <li>
+        <li class="main-nav__li">
           <%= link_to 'Activities', '/stores?category=activity' %>
         </li>
-        <li>
+        <li class="main-nav__li">
           <%= link_to 'Decorations', '/stores?category=decor' %>
         </li>
-        <li>
+        <li class="main-nav__li">
           <%= link_to 'Staff', '/stores?category=staff' %>
         </li>
         <% if user_signed_in? %>
-          <li>
+          <li class="main-nav__li">
             <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
           </li>
         <% else %>
-          <li>
+          <li class="main-nav__li">
             <%= link_to 'Login/Register', new_user_session_path %>
           </li>
         <% end %>

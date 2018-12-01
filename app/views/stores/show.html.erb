@@ -1,6 +1,6 @@
 <div class="header-div">
 <h1><%= @store.name %></h1>
-<img class="show-img" src="<%= @store.images %>" alt="logo-image">
+<img class="header-div__img" src="<%= @store.images %>" alt="logo-image">
 <h3><%= @store.headline %></h3>
 </div>
 <hr>
@@ -12,14 +12,14 @@
 <a href="<%= @store.website %>"></a>
 </div>
 
-<div class="middle-div">
+<div class="contact">
 
-<div class="contact-info">
+<div class="contact__basic">
 <p>Call Us: <a href="tel:<%= @store.number %>"><%= @store.number %></a></p>
 <p>Email Us: <a href="mailto:<%= @store.email %>"><%= @store.email %></a></p>
 </div>
 
-<div class="social-media">
+<div class="contact__social-media">
 <p>Facebook: <a href="<% @store.facebook %>">
 <%= @store.facebook  %></a></p>
 <p>Snapchat: <a href="<%= @store.snapchat %>"><%= @store.snapchat %></a></p>
