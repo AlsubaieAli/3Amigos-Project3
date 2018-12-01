@@ -1,5 +1,8 @@
+<div class="all-stores-div">
 <% @stores.each do |store| %>
-<div class="store-div">
-  <h2><%= link_to store.name, store %></h2>
-</div>
+  <div class="store-div">
+      <img class="store-div__img" src="<%= store.images %>" alt="">
+      <h2 class="store-div__title"><%= link_to store.name, store %></h2>
+  </div>
 <% end %>
+</div>

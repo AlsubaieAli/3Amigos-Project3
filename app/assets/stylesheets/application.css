@@ -48,14 +48,12 @@ body{
 .main-nav__li > a:hover{
     text-decoration: underline;
     color: rgb(7, 182, 156);
-    font-size: 1.5vw;
-}
+    }
 
 
 
 /* SHOW PAGE */
 .header-div__img {
-    box-sizing: border-box;
     width: 200px !important;
     height: 200px !important;
     border:3px solid #ccc;
@@ -70,4 +68,31 @@ body{
 
 .basic-info {
     flex-direction: column;
+}
+
+
+/* INDEX PAGE */
+.all-stores-div{
+    margin: 15px 10vw;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.store-div{
+    padding: 35px;
+    margin: 15px;
+    box-shadow: 0px 0px 2px 3px rgb(203, 203, 203);
+}
+
+.store-div__img {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.store-div__title > a{
+    text-decoration: none;
+    color: black;
 }
