@@ -17,14 +17,28 @@
 <div class="contact__basic">
 <p>Call Us: <a href="tel:<%= @store.number %>"><%= @store.number %></a></p>
 <p>Email Us: <a href="mailto:<%= @store.email %>"><%= @store.email %></a></p>
+<% if (@store.website ) %>
+<p>Website: <a href="<%= @store.website %>"><%= @store.website %></a></p>
+<% end %>
 </div>
 
 <div class="contact__social-media">
+<% if (@store.facebook ) %>
 <p>Facebook: <a href="<% @store.facebook %>">
 <%= @store.facebook  %></a></p>
-<p>Snapchat: <a href="<%= @store.snapchat %>"><%= @store.snapchat %></a></p>
+<% end %>
+<% if (@store.snapchat ) %>
+<p>Snapchat: @<%= @store.snapchat %></p>
+<% end %>
+<% if (@store.instagram ) %>
 <p>Instagram: <a href="<%= @store.instagram %>"><%= @store.instagram %></a></p>
+<% end %>
+<% if (@store.twitter ) %>
 <p>Twitter: <a href="<%= @store.twitter %>"><%= @store.twitter %></a></p>
+<% end %>
+<% if (@store.extra_link ) %>
+<p>Other: <a href="<%= @store.extra_link %>"><%= @store.extra_link %></a></p>
+<% end %>
 </div>
 
 </div>
