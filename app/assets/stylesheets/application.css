@@ -117,6 +117,8 @@ body{
     width: 200px !important;
     height: 200px !important;
     margin-bottom: 8px;
+    border:1px solid rgb(253, 158, 191);
+    border-radius: 50%;
 }
 
 .store-div__title > a{
