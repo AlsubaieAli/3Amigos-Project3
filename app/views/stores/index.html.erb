@@ -2,7 +2,10 @@
 <% @stores.each do |store| %>
   <div class="store-div">
       <img class="store-div__img" src="<%= store.images %>" alt="">
+      <hr>
       <h2 class="store-div__title"><%= link_to store.name, store %></h2>
+      <hr>
+      <p class="store-div__headline"><%= store.headline %></p>
   </div>
 <% end %>
 </div>

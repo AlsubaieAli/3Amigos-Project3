@@ -14,6 +14,16 @@
  *= require_self
  */
 
+/* 
+GOOGLE FONTS 
+font-family: 'Pacifico', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Rochester', cursive;
+font-family: 'Grand Hotel', cursive;
+font-family: 'Norican', cursive; 
+*/
 
 body{
     text-align: center;
@@ -22,9 +32,24 @@ body{
     box-sizing: border-box;
 }
 
+.header__img{
+    width: 90px;
+    height: 92px;
+}
+
+.header__name{
+    display: inline;
+    margin: 0px 3vw;
+    color: rgb(253, 158, 191);
+    font-family: 'Rochester', cursive; 
+    /* font-family: 'Pacifico', cursive; */
+    font-weight: normal;
+    font-size: 4vw;
+}
+
 /* MAIN NAV */
 .main-nav{
-    background-color: rgb(83, 240, 217);
+    background-color: rgb(255, 151, 200);
     height: 80px;
     line-height: 80px;
 }
@@ -47,7 +72,7 @@ body{
 
 .main-nav__li > a:hover{
     text-decoration: underline;
-    color: rgb(7, 182, 156);
+    color:  rgb(230, 16, 91);
     }
 
 
@@ -73,12 +98,13 @@ body{
 
 /* INDEX PAGE */
 .all-stores-div{
-    margin: 15px 10vw;
+    margin: 15px 8vw;
     padding-top: 25px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: left;
     flex-wrap: wrap;
+    align-items: flex-start
 }
 
 .store-div{
@@ -90,9 +116,23 @@ body{
 .store-div__img {
     width: 200px !important;
     height: 200px !important;
+    margin-bottom: 8px;
 }
 
 .store-div__title > a{
     text-decoration: none;
     color: black;
+}
+
+.store-div__title > a:hover{
+    text-decoration: none;
+    color: rgb(230, 16, 91);
+}
+
+.store-div__headline {
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 0;
 }
