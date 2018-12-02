@@ -1,6 +1,7 @@
 <div class="header-div">
 <h1><%= @store.name %></h1>
-<img class="header-div__img" src="<%= @store.images %>" alt="logo-image">
+
+<%= cl_image_tag @store.images , class:"header-div__img" %>
 <h3><%= @store.headline %></h3>
 </div>
 <hr>
