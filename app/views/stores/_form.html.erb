@@ -55,5 +55,20 @@
     <%= f.label :extra_link %>
     <%= f.url_field :extra_link %>
   </div>
+  <div>
+    <%= f.label :category %>
+    <%# <%= f.text_field :category %> 
+    <%# <%= options_for_select([['Lisbon', 1], ['Madrid', 2], ...]) %> 
+    <%= f.select(:category) do %>
+      <% [['Place', 'place'], ['Food', 'food'], ['Activity', 'activity'], ['Decoration', 'decor'], ['Staff', 'staff']].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    <%# f.select :category, options_for_select([[‘Currently Playing’, “current”], [‘Want To Play’, “to_play”],  [‘Finished’, “finished”]])%>
+  </div>
+  <div>
+    <%= f.label :sub_category %>
+    <%= f.text_field :sub_category %>
+  </div>
    <%= f.submit %>
 <% end %>
