@@ -36,6 +36,8 @@ body{
     background-color: black;
     position: fixed;
     top: 0;
+    right: 0;
+    text-align: center;
     height: 100%;
     margin-top: 0;
     line-height: 100px;
@@ -58,6 +60,12 @@ body{
     font-size: 4vw;
 }
 
+
+.main-page{
+    position: absolute;
+    left: 150px;
+}
+
 /* MAIN NAV */
 .main-nav{
     margin-top: 0;
@@ -65,9 +73,9 @@ body{
 
 .main-nav__ul {
     margin-top: 0;
-    display: flex;
+    /* display: flex; */
     /* align-self: right; */
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-evenly;
 }
 
