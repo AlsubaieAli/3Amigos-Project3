@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Contact Us for More Information</h2>
+  <%= form_for @contact do |f| %>
+    <div class="field">
+      <%= f.label :name, "Name:" %>
+      <%= f.text_field :name, placeholder: "Write your name" %>
+    </div>
+    <div class="field">
+      <%= f.label :email, "Email:" %>
+      <%= f.email_field :email, placeholder: "Write your email" %>
+    </div>
+    <div class="field">
+      <%= f.label :title, "Title:" %>
+      <%= f.text_field :title, placeholder: "What is the topic?" %>
+    </div>
+    <div class="field">
+      <%= f.label :body, "Message:" %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit "Send", class: "submit" %>
+  <% end %>
+</div>

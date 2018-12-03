@@ -1,11 +1,9 @@
 <div class="all-stores-div">
 <% @stores.each do |store| %>
-  <div class="store-div">
-      <img class="store-div__img" src="<%= store.images %>" alt="">
-      <hr>
-      <h2 class="store-div__title"><%= link_to store.name, store %></h2>
-      <hr>
-      <p class="store-div__headline"><%= store.headline %></p>
-  </div>
+  <a class="store-div" href=<%= "/stores/#{store.id}" %>>
+    <img class="store-div__img" src="<%= store.images %>" alt="">
+    <h2 class="store-div__title"><%= store.name %></h2>
+    <p class="store-div__headline"><%= store.headline %></p>
+  </a>
 <% end %>
 </div>
