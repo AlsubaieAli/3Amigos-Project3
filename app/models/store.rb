@@ -28,4 +28,6 @@
 class Store < ApplicationRecord
   mount_uploader :images, ImageUploader
   has_many :comments
+  belongs_to :category
+  has_many :tags, through: :category
 end
