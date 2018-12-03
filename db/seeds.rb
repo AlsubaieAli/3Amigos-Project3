@@ -49,6 +49,7 @@ Tag.create(name: "Breakfast", category_id: 2)
 Tag.create(name: "Photography", category_id: 3)
 Tag.create(name: "Waiting Staff", category_id: 3)
 Tag.create(name: "Event Planner", category_id: 3)
+Tag.create(name: "Entairtemnt Crew", category_id: 3)
 
 #Decor
 Tag.create(name: "Flowers", category_id: 4)
@@ -62,4 +63,3 @@ Tag.create(name: "Accessories", category_id: 4)
 #Activity
 Tag.create(name: "Games", category_id: 5)
 Tag.create(name: "Outdoor Activities", category_id: 5)
-Tag.create(name: "Entairtemnt Crew", category_id: 3)
