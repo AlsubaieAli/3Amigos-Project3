@@ -1,2 +1,9 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="all-stores-div">
+<% @stores.each do |store| %>
+  <a class="store-div" href=<%= "/stores/#{store.id}" %>>
+    <img class="store-div__img" src="<%= store.images %>" alt="">
+    <h2 class="store-div__title"><%= store.name %></h2>
+    <p class="store-div__headline"><%= store.headline %></p>
+  </a>
+<% end %>
+</div>

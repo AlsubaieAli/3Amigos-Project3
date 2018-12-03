@@ -1,2 +1,16 @@
-<h2>Welcome to Party Planner</h2>
-<p>You can find all the information you need for planning your party</p>
+<div class="home-page">
+<h2 class="home-title">Welcome to Party Planner</h2>
+<p style="text-align:center">You can find all the information you need for planning your party</p>
+
+<hr>
+<h2>Recently Joined the Party Planner Family</h2>
+<div class="all-stores-div">
+<% @stores.reverse.first(3).each do |store| %>
+  <a class="store-div" href=<%= "/stores/#{store.id}" %>>
+    <img class="store-div__img" src="<%= store.images %>" alt="">
+    <h2 class="store-div__title"><%= store.name %></h2>
+    <p class="store-div__headline"><%= store.headline %></p>
+  </a>
+<% end %>
+</div>
+</div>
