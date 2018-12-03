@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_115607) do
+ActiveRecord::Schema.define(version: 2018_12_03_143314) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,11 @@ ActiveRecord::Schema.define(version: 2018_12_03_115607) do
     t.boolean "approved", default: false
     t.integer "category_id"
     t.string "city"
+  end
+
+  create_table "stores_tags", id: false, force: :cascade do |t|
+    t.integer "store_id", null: false
+    t.integer "tag_id", null: false
   end
 
   create_table "tags", force: :cascade do |t|

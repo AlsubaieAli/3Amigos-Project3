@@ -5,6 +5,6 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find_by(id: params[:id])
-    @stores = @tag.category.stores
+    @stores = @tag.stores
   end
 end

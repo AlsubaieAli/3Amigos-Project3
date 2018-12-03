@@ -76,12 +76,15 @@
       <%= f.url_field :extra_link %>
     </div>
 
-  
-
     <div class="field">
       <%= f.label :category_id, "Category" %>
       <%= f.collection_select :category_id, Category.all.collect, :id, :name, prompt: true %>
       <%# f.text_field :category_id %>
+    </div>
+
+    <div class="field">
+    <%= f.label :tags_ids, "Tags" %> <br>
+    <%= f.collection_check_boxes :tag_ids, Tag.where(category_id: 5), :id, :name %>
     </div>
 
     <%= f.submit "Add", class: "submit" %>
