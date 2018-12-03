@@ -1,6 +1,11 @@
 class TagsController < ApplicationController
   def index
-    @tags = Tag.all
+    @tags = Tag.all.where(category_id: params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @tags }
+    end
   end
 
   def show
