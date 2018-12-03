@@ -28,38 +28,38 @@
 # Category.create(name: "decor")
 # Category.create(name: "activity")
 
-#Places
-Tag.create(name: "Hotels", category_id: 1)
-Tag.create(name: "Resturants", category_id: 1)
-Tag.create(name: "Resorts", category_id: 1)
-Tag.create(name: "Wedding Halls", category_id: 1)
-Tag.create(name: "Parks", category_id: 1)
-Tag.create(name: "Theme Parks", category_id: 1)
+# #Places
+# Tag.create(name: "Hotels", category_id: 1)
+# Tag.create(name: "Resturants", category_id: 1)
+# Tag.create(name: "Resorts", category_id: 1)
+# Tag.create(name: "Wedding Halls", category_id: 1)
+# Tag.create(name: "Parks", category_id: 1)
+# Tag.create(name: "Theme Parks", category_id: 1)
 
-#Food
-Tag.create(name: "Dinner", category_id: 2)
-Tag.create(name: "Coffee", category_id: 2)
-Tag.create(name: "Chocolate", category_id: 2)
-Tag.create(name: "Dessert", category_id: 2)
-Tag.create(name: "Buffet", category_id: 2)
-Tag.create(name: "Food Trucks", category_id: 2)
-Tag.create(name: "Breakfast", category_id: 2)
+# #Food
+# Tag.create(name: "Dinner", category_id: 2)
+# Tag.create(name: "Coffee", category_id: 2)
+# Tag.create(name: "Chocolate", category_id: 2)
+# Tag.create(name: "Dessert", category_id: 2)
+# Tag.create(name: "Buffet", category_id: 2)
+# Tag.create(name: "Food Trucks", category_id: 2)
+# Tag.create(name: "Breakfast", category_id: 2)
 
-#Staff
-Tag.create(name: "Photography", category_id: 3)
-Tag.create(name: "Waiting Staff", category_id: 3)
-Tag.create(name: "Event Planner", category_id: 3)
-Tag.create(name: "Entairtemnt Crew", category_id: 3)
+# #Staff
+# Tag.create(name: "Photography", category_id: 3)
+# Tag.create(name: "Waiting Staff", category_id: 3)
+# Tag.create(name: "Event Planner", category_id: 3)
+# Tag.create(name: "Entairtemnt Crew", category_id: 3)
 
-#Decor
-Tag.create(name: "Flowers", category_id: 4)
-Tag.create(name: "Furniture", category_id: 4)
-Tag.create(name: "Balloons", category_id: 4)
-Tag.create(name: "Lights", category_id: 4)
-Tag.create(name: "Dinner Tables", category_id: 4)
-Tag.create(name: "Dessert Buffet", category_id: 4)
-Tag.create(name: "Accessories", category_id: 4)
+# #Decor
+# Tag.create(name: "Flowers", category_id: 4)
+# Tag.create(name: "Furniture", category_id: 4)
+# Tag.create(name: "Balloons", category_id: 4)
+# Tag.create(name: "Lights", category_id: 4)
+# Tag.create(name: "Dinner Tables", category_id: 4)
+# Tag.create(name: "Dessert Buffet", category_id: 4)
+# Tag.create(name: "Accessories", category_id: 4)
 
-#Activity
-Tag.create(name: "Games", category_id: 5)
-Tag.create(name: "Outdoor Activities", category_id: 5)
+# #Activity
+# Tag.create(name: "Games", category_id: 5)
+# Tag.create(name: "Outdoor Activities", category_id: 5)
