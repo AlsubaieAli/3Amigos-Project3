@@ -1,7 +1,7 @@
 <% if user_signed_in? && current_user.is_admin %>
 <h1>Tags index</h1>
 <table>
-<% @tags.each do |tag| %>
+<% @alltags.each do |tag| %>
 <tr>
 <td><%= tag.name %></td>
 <td><%= tag.id %></td>

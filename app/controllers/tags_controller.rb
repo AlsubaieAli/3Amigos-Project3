@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   def index
+    @alltags = Tag.all
     @tags = Tag.all.where(category_id: params[:id])
 
     respond_to do |format|
