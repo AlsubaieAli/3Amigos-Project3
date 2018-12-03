@@ -1,74 +1,93 @@
-<%= form_for @store do |f| %>
-   <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-    <div>
-    <%= f.label :headline %>
-    <%= f.text_field :headline %>
-  </div>
-    <div>
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
-  </div>
-  <div>
-  <%= f.label "Images" %>
-  <%= f.file_field :images %>
-</div>
-    <div>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-    <div>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-  </div>
-    <div>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-    <div>
-    <%= f.label :number %>
-    <%= f.number_field :number %>
-  </div>
-    <div>
-    <%= f.label :website %>
-    <%= f.url_field :website %>
-  </div>
-    <div>
-    <%= f.label :twitter %>
-    <%= f.url_field :twitter %>
-  </div>
-    <div>
-    <%= f.label :instagram %>
-    <%= f.url_field :instagram %>
-  </div>
-    <div>
-    <%= f.label :snapchat %>
-    <%= f.text_field :snapchat %>
-  </div>
-   <div>
-    <%= f.label :facebook %>
-    <%= f.url_field :facebook %>
-  </div>
-   <div>
-    <%= f.label :extra_link %>
-    <%= f.url_field :extra_link %>
-  </div>
-  <div>
-    <%= f.label :category %>
-    <%# <%= f.text_field :category %> 
-    <%# <%= options_for_select([['Lisbon', 1], ['Madrid', 2], ...]) %> 
-    <%= f.select(:category) do %>
-      <% [['Place', 'place'], ['Food', 'food'], ['Activity', 'activity'], ['Decoration', 'decor'], ['Staff', 'staff']].each do |c| -%>
-        <%= content_tag(:option, c.first, value: c.last) %>
+<div class="container">
+  <h2>Add new store</h2>
+  <%= form_for @store do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :headline %>
+      <%= f.text_field :headline %>
+    </div>
+
+    <div class="field">
+      <%= f.label :bio %>
+      <%= f.text_area :bio %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Images" %>
+      <%= f.file_field :images %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="field">
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :number %>
+      <%= f.number_field :number %>
+    </div>
+
+    <div class="field">
+      <%= f.label :website %>
+      <%= f.url_field :website %>
+    </div>
+
+    <div class="field">
+      <%= f.label :twitter %>
+      <%= f.url_field :twitter %>
+    </div>
+
+    <div class="field">
+      <%= f.label :instagram %>
+      <%= f.url_field :instagram %>
+    </div>
+
+    <div class="field">
+      <%= f.label :snapchat %>
+      <%= f.text_field :snapchat %>
+    </div>
+
+    <div class="field">
+      <%= f.label :facebook %>
+      <%= f.url_field :facebook %>
+    </div>
+
+    <div class="field">
+      <%= f.label :extra_link %>
+      <%= f.url_field :extra_link %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category %>
+      <%# <%= f.text_field :category %> 
+      <%# <%= options_for_select([['Lisbon', 1], ['Madrid', 2], ...]) %> 
+      <%= f.select(:category) do %>
+        <% [['Place', 'place'], ['Food', 'food'], ['Activity', 'activity'], ['Decoration', 'decor'], ['Staff', 'staff']].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
       <% end %>
-    <% end %>
     <%# f.select :category, options_for_select([[‘Currently Playing’, “current”], [‘Want To Play’, “to_play”],  [‘Finished’, “finished”]])%>
-  </div>
-  <div>
-    <%= f.label :sub_category %>
-    <%= f.text_field :sub_category %>
-  </div>
-   <%= f.submit %>
-<% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :sub_category %>
+      <%= f.text_field :sub_category %>
+    </div>
+
+    <%= f.submit "Add", class: "submit" %>
+  <% end %>
+</div>

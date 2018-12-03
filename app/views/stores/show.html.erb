@@ -18,26 +18,26 @@
 <div class="contact__basic">
 <p>Call Us: <a href="tel:<%= @store.number %>"><%= @store.number %></a></p>
 <p>Email Us: <a href="mailto:<%= @store.email %>"><%= @store.email %></a></p>
-<% if (@store.website != "" && @store.website != nil) %>
+<% if (@store.website != "" && @store.website != nil    ) %>
 <p>Website: <a href="<%= @store.website %>"><%= @store.website %></a></p>
 <% end %>
 </div>
 
 <div class="contact__social-media">
-<% if (@store.facebook != "" && @store.facebook != nil) %>
+<% if (@store.facebook != "" && @store.facebook != nil  ) %>
 <p>Facebook: <a href="<% @store.facebook %>">
 <%= @store.facebook  %></a></p>
 <% end %>
-<% if (@store.snapchat != "" && @store.snapchat != nil) %>
+<% if (@store.snapchat != "" && @store.snapchat != nil  ) %>
 <p>Snapchat: @<%= @store.snapchat %></p>
 <% end %>
-<% if (@store.instagram != "" && @store.instagram != nil) %>
+<% if (@store.instagram != "" && @store.instagram != nil    ) %>
 <p>Instagram: <a href="<%= @store.instagram %>"><%= @store.instagram %></a></p>
 <% end %>
-<% if (@store.twitter != "" && @store.twitter != nil) %>
+<% if (@store.twitter != "" && @store.twitter != nil    ) %>
 <p>Twitter: <a href="<%= @store.twitter %>"><%= @store.twitter %></a></p>
 <% end %>
-<% if (@store.extra_link != "" && @store.extra_link != nil) %>
+<% if (@store.extra_link != "" && @store.extra_link != nil  ) %>
 <p>Other: <a href="<%= @store.extra_link %>"><%= @store.extra_link %></a></p>
 <% end %>
 </div>
