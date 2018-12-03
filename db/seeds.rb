@@ -62,4 +62,4 @@ Tag.create(name: "Accessories", category_id: 4)
 #Activity
 Tag.create(name: "Games", category_id: 5)
 Tag.create(name: "Outdoor Activities", category_id: 5)
-Tag.create(name: "Entairtemnt Crew", category_id: 5)
+Tag.create(name: "Entairtemnt Crew", category_id: 3)
