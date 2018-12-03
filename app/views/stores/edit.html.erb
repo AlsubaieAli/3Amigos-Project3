@@ -1,1 +1,6 @@
+<% if user_signed_in? && current_user.is_admin %>
+
 <%= render partial: 'form' %>
+<% else %>
+<p>You are not authorized to view this page</p>
+<% end %>

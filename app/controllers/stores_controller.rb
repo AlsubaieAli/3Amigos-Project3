@@ -10,6 +10,9 @@ class StoresController < ApplicationController
 
   def new
     @store = Store.new
+    unless is_admin
+      redirect_to contact_index_path
+    end
   end
 
   def create
@@ -19,6 +22,9 @@ class StoresController < ApplicationController
 
   def edit
     @store = Store.find_by(id: params[:id])
+    unless is_admin
+      redirect_to contact_index_path
+    end
   end
 
   def update
@@ -34,6 +40,14 @@ class StoresController < ApplicationController
   end
 
   private
+
+  def is_admin
+    if user_signed_in? && current_user.is_admin
+      return true
+    else
+      return false
+    end
+  end
 
   def store_params
     params.require(:store).permit(:name, :address, :longitude, :latitude, :headline, :images, :price, :bio, :email, :number, :website, :facebook, :instagram, :snapchat, :twitter, :extra_link, :category, :city, :category_id, tag_ids: [])

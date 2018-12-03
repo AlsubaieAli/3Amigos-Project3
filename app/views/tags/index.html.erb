@@ -1,5 +1,14 @@
-<h1>Tags#index</h1>
-<p>Find me in app/views/tags/index.html.erb</p>
+<% if user_signed_in? && current_user.is_admin %>
+<h1>Tags index</h1>
+<table>
 <% @tags.each do |tag| %>
-<%= tag.name %>
+<tr>
+<td><%= tag.name %></td>
+<td><%= tag.id %></td>
+</tr>
+<% end %>
+</table>
+
+<% else %>
+<p>You are not authorized to view this page</p>
 <% end %>
