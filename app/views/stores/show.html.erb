@@ -48,7 +48,10 @@
       <p>Address: <%= @store.address %></p>
       <div class="map-container">
         <h4>On Google Maps</h4>
-        <div class="map" id="map"></div>
+        <%# <div class="map" id="map"></div> %>
+
+<div  class="map" id="map" style="height:300px;width:650px;margin:0 auto; border: 1px solid black;" ></div>
+  
       </div>
     </div>
 
@@ -72,3 +75,24 @@
   </div>
 
 </div>
+
+
+    <script>
+     function initMap() {
+         var myLatLng = {lat: <%= @store.latitude %>, lng: <%= @store.longitude %>};
+         var map = new google.maps.Map(document.getElementById('map'), {
+         center: myLatLng,
+         zoom: 9
+       });
+
+         var marker = new google.maps.Marker({
+         map: map,
+         position: myLatLng,
+         title: "<%= @store.name %>"
+       });
+     }
+
+   </script>
+
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_k6CbjckRGweXSChHuMKc1tO3SqMn_4o &callback=initMap"
+       async defer></script>

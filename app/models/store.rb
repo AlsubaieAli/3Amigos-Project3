@@ -30,4 +30,6 @@ class Store < ApplicationRecord
   has_many :comments
   belongs_to :category
   has_many :tags, through: :category
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
