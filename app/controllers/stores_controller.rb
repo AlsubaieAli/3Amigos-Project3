@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def index
-    @stores = Store.all.where(category: params[:category])
+    @stores = Store.all
   end
 
   def show

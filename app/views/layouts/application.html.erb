@@ -15,31 +15,14 @@
       <h1 class="header__name">Party Planner</h1>
       <nav class="main-nav">
         <ul class="main-nav__ul">
-        <%#
-          @categories.each do |cate|
-            <li>
-              link_to cate.name, cate
-            </li>
-          end
-        %>
           <li class="main-nav__li">
             <a href="/" rel="noopener noreferrer">Home</a>
           </li>
-          <li class="main-nav__li">
-            <%= link_to 'Places', '/stores?category=place' %>
-          </li>
-          <li class="main-nav__li">
-            <%= link_to 'Foods', '/stores?category=food' %>
-          </li>
-          <li class="main-nav__li">
-            <%= link_to 'Activities', '/stores?category=activity' %>
-          </li>
-          <li class="main-nav__li">
-            <%= link_to 'Decorations', '/stores?category=decor' %>
-          </li>
-          <li class="main-nav__li">
-            <%= link_to 'Staff', '/stores?category=staff' %>
-          </li>
+          <% @categories.each do |cate| %>
+            <li>
+              <%= link_to cate.name, '/' %>
+            </li>
+          <% end %>
           <li class="main-nav__li">
             <%= link_to 'Contact', contact_index_path %>
           </li>

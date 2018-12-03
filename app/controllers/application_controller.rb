@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :get_categories
+
+  def get_categories
+    @categories = Category.all
+  end
 
   protected
 

@@ -232,3 +232,12 @@ form .submit:hover{
 	background-color: #fff;
 	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
+
+.content-div-header{
+	text-align: center;
+}
+
+.content-div-header img{
+	border-radius: 10px;
+	max-width: 300px;
+}
