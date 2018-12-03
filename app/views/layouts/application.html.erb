@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Grand+Hotel|Lobster|Norican|Pacifico|Rochester|Satisfy" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,7 +20,7 @@
           </li>
           <% @categories.each do |cate| %>
             <li>
-              <%= link_to cate.name, '/' %>
+              <%= link_to cate.name, cate %>
             </li>
           <% end %>
           <li class="main-nav__li">
