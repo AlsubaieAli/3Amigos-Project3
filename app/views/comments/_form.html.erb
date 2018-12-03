@@ -1,9 +1,9 @@
 <%= form_for @comments do |f| %>
   <%# f.hidden_field(:store_id, @store.id) %>
   <%= f.hidden_field :store_id, :value => @store.id %>
-  <%= f.label :content, 'Write your comment' %>
-  <br>
-  <%= f.text_area :content %>
-  <br>
-  <%= f.submit "Send" %>
+  <div class="field">
+    <%= f.label :content, 'Write your comment' %>
+    <%= f.text_area :content %>
+  </div>
+  <%= f.submit "Send", class: "submit" %>
 <% end %>

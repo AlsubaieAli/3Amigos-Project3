@@ -1,73 +1,75 @@
-<div class="content-div"></div>
-<div class="content-div-header">
-  <%= cl_image_tag @store.images , class:"header-div__img" %>
-  <h2><%= @store.name %></h2>
-  <h3><%= @store.headline %></h3>
-</div>
+<div class="content-div">
+  <div class="content-div-header">
+    <% if @store.images != "" && @store.images != nil %>
+      <%= cl_image_tag @store.images %>
+    <% end %>
+    <div>
+      <h2><%= @store.name %></h2>
+      <h3><%= @store.headline %></h3>
+    </div>
 
-<hr>
+    <div class="contact">
+      <p>Call Us: <a href="tel:<%= @store.number %>"><%= @store.number %></a></p>
+      <a href="mailto:<%= @store.email %>">Email Us</a>
+        
+      <% if (@store.website != "" && @store.website != nil    ) %>
+        <a href="<%= @store.website %>"><%= "#{@store.name}'s Website" %></a>
+      <% end %>
 
-<div class="basic-info">
-  <p><%= @store.address %></p>
-  <p><%= @store.bio %></p>
-  <p><%= @store.price %></p>
-  <% if (@store.website != "" && @store.website != nil    ) %>
-    <a href="<%= @store.website %>"><%= "#{@store.name}'s Website" %></a>
-  <% else %>
-    <p>No Website</p>
-  <% end %>
-</div>
+      <% if (@store.snapchat != "" && @store.snapchat != nil  ) %>
+        <p>Snapchat: @<%= @store.snapchat %></p>
+      <% end %>
 
-<div class="contact">
+      <div class="social-media">
+        <% if (@store.facebook != "" && @store.facebook != nil  ) %>
+          <a target="_blank" href="<% @store.facebook %>"><i class="fab fa-facebook-f fa-2x"></i></a>
+        <% end %>
 
-  <div class="contact__basic">
-    <p>Call Us: <a href="tel:<%= @store.number %>"><%= @store.number %></a></p>
-    <p>Email Us: <a href="mailto:<%= @store.email %>"><%= @store.email %></a></p>
+        <% if (@store.instagram != "" && @store.instagram != nil    ) %>
+          <a target="_blank" href="<%= @store.instagram %>"><i class="fab fa-instagram fa-2x"></i></a>
+        <% end %>
+
+        <% if (@store.twitter != "" && @store.twitter != nil    ) %>
+          <a target="_blank" href="<%= @store.twitter %>"><i class="fab fa-twitter fa-2x"></i></a>
+        <% end %>
+      </div>
+
+      <% if (@store.extra_link != "" && @store.extra_link != nil  ) %>
+        <p>Other Links: <a href="<%= @store.extra_link %>"><%= @store.extra_link %></a></p>
+      <% end %>
+    </div>
+    
   </div>
+  <hr>
+  <div class="content-div-body">
+    <div class="basic-info">
+      <p class="bio"><%= @store.bio %></p>
+      <p><%= @store.price %></p>
+      <p>Address: <%= @store.address %></p>
+      <div class="map-container">
+        <h4>On Google Maps</h4>
+        <div class="map" id="map"></div>
+      </div>
+    </div>
 
-  <div class="contact__social-media">
-    <% if (@store.facebook != "" && @store.facebook != nil  ) %>
-      <p>Facebook: <a href="<% @store.facebook %>">
-      <%= @store.facebook  %></a></p>
-    <% end %>
-
-    <% if (@store.snapchat != "" && @store.snapchat != nil  ) %>
-      <p>Snapchat: @<%= @store.snapchat %></p>
-    <% end %>
-
-    <% if (@store.instagram != "" && @store.instagram != nil    ) %>
-      <p>Instagram: <a href="<%= @store.instagram %>"><%= @store.instagram %></a></p>
-    <% end %>
-
-    <% if (@store.twitter != "" && @store.twitter != nil    ) %>
-      <p>Twitter: <a href="<%= @store.twitter %>"><%= @store.twitter %></a></p>
-    <% end %>
-
-    <% if (@store.extra_link != "" && @store.extra_link != nil  ) %>
-      <p>Other: <a href="<%= @store.extra_link %>"><%= @store.extra_link %></a></p>
-    <% end %>
-  </div>
-
-</div>
-
-
-<hr>
-
-<div class="tags-div">
-  <h5>Tagged With</h5>
-  <h6><%= @store.sub_category %></h6>
-</div>
-
-<hr>
-
-<div class="comments-div">
-  <h5>Comments:</h5>
-  <% @store.comments.each do |comment| %>
-    <p><%= comment.content %> <strong>-<%= comment.user.name%></strong></p>
-  <% end %>
-  
-  <% if user_signed_in? %>
     <hr>
-    <%= render partial: 'comments/form' %>
-  <% end %>
+    <div class="tags-div">
+      <h5>Tagged With</h5>
+      <h6><%= @store.sub_category %></h6>
+    </div>
+
+    <hr>
+    <div class="comments-div">
+      <h5>Comments:</h5>
+      <% @store.comments.each do |comment| %>
+        <p><%= comment.content %> <strong>-<%= comment.user.name%></strong></p>
+      <% end %>
+      
+      <% if user_signed_in? %>
+        <hr>
+        <%= render partial: 'comments/form' %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
