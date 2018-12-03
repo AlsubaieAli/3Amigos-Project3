@@ -21,8 +21,34 @@
 
 #Activities Seed
 # Store.create(name: , category: "activity" , sub_category: , address: , email: , number: , website: , facebook: , instagram: , snapchat:, twitter:, extra_link: , headline: , bio: , images: )
-Category.create(name: "place")
-Category.create(name: "food")
-Category.create(name: "staff")
-Category.create(name: "decor")
-Category.create(name: "activity")
+
+# Category.create(name: "place")
+# Category.create(name: "food")
+# Category.create(name: "staff")
+# Category.create(name: "decor")
+# Category.create(name: "activity")
+
+#Places
+Tag.create(name: "Hotels", category_id: 1)
+Tag.create(name: "Resturants", category_id: 1)
+Tag.create(name: "Resorts", category_id: 1)
+Tag.create(name: "Wedding Halls", category_id: 1)
+Tag.create(name: "Parks", category_id: 1)
+Tag.create(name: "Theme Parks", category_id: 1)
+
+#Food
+Tag.create(name: "Dinner", category_id: 2)
+Tag.create(name: "Breakfast", category_id: 2)
+Tag.create(name: "Chocolate", category_id: 2)
+Tag.create(name: "Dessert", category_id: 2)
+Tag.create(name: "Buffet", category_id: 2)
+Tag.create(name: "Food Trucks", category_id: 2)
+
+#Staff
+Tag.create(name: "", category_id: 3)
+
+#Decor
+Tag.create(name: "", category_id: 4)
+
+#Activity
+Tag.create(name: "", category_id: 5)
