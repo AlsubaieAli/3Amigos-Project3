@@ -14,7 +14,8 @@
 
     <script>
      function initMap() {
-       var myLatLng = {lat: <%= @stores.first.latitude %>, lng: <%= @stores.first.longitude %>};
+       <%if @stores.last != nil %>
+       var myLatLng = {lat: <%= @stores.last.latitude %>, lng: <%= @stores.last.longitude %>};
        var map = new google.maps.Map(document.getElementById('map'), {
          center: myLatLng,
          zoom: 9});
@@ -42,6 +43,7 @@
        
         
        <% end %>
+       <%end %>
         
      }
 
