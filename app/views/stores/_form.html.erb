@@ -79,7 +79,6 @@
     <div class="field">
       <%= f.label :category_id, "Category" %>
       <%= f.collection_select :category_id, Category.all.collect, :id, :name,required: true %>
-      <%# f.text_field :category_id %>
     </div>
 
     <div id="tags-div" class="field">

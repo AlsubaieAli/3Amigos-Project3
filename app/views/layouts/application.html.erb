@@ -28,6 +28,10 @@
           </li>
           <li class="main-nav__li">
             <% if user_signed_in? %>
+             <% if current_user.is_admin %>
+              <%= link_to 'Stores', stores_path %>
+              <%= link_to 'Tags', tags_path %>
+              <% end %>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to 'Login/Register', new_user_session_path %>
