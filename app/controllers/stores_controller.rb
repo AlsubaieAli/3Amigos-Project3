@@ -14,6 +14,13 @@ class StoresController < ApplicationController
 
   def create
     store = Store.create(store_params)
+    if store.latitude.nil?
+        city = Geocoder.search(store.city).first
+        store.latitude = city.latitude
+        store.longitude = city.longitude
+        store.save
+    end
+    # raise
     redirect_to stores_path
   end
 
