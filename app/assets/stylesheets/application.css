@@ -313,3 +313,10 @@ form .submit:hover{
 hr{
 	border-color: rgb(230, 16, 91);
 }
+
+table, td, tr, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding:10px;
+
+}
