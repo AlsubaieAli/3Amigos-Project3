@@ -18,10 +18,19 @@
           <li class="main-nav__li">
             <a href="/" rel="noopener noreferrer">Home</a>
           </li>
+
           <% @categories.each do |cate| %>
-            <li>
-              <%= link_to cate.name, cate %>
-            </li>
+  <li class="dropdown">
+              <%= link_to cate.name, cate %>     
+  <div class="dropdown-content">
+          <% cate.tags.each do |tag| %>
+              <%= link_to tag.name, tag %>
+          <% end %>
+  </div>
+  </li> 
+
+  <br>
+            
           <% end %>
           <li class="main-nav__li">
             <%= link_to 'Contact', contact_index_path %>
