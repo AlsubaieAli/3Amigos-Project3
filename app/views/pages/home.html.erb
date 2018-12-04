@@ -7,7 +7,7 @@
   <hr>
   <form class="search-form">
     <div class="field">
-      <input type="text" placeholder="Search" id="search-input" autofocus>
+      <input type="text" placeholder="Search by store name" id="search-input" autofocus>
       <input type="submit" value="Search" class="submit">
     </div>
   </form>
@@ -59,7 +59,6 @@
           resultContainer.innerHTML = "No match found";
         } else {
           for(let store of data){
-          
             resultContainer.innerHTML += `
               <a class="store-div" href="/stores/${store.id}">
                 <img class="store-div__img" src="${store.images.url}" alt="">

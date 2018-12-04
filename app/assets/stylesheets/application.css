@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
+/* 
+font-family: 'Pacifico', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Rochester', cursive;
+font-family: 'Grand Hotel', cursive;
+font-family: 'Norican', cursive; 
+ */
+
 *{
 	box-sizing: border-box;
 }
@@ -362,10 +372,8 @@ hr{
 	width: 100%;
 	justify-self: center;
 }
-
 table, td, tr, th {
 	border: 1px solid black;
 	border-collapse: collapse;
 	padding:10px;
-
 }
