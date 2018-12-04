@@ -3,17 +3,17 @@
   <%= form_for @store do |f| %>
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, required: true %>
     </div>
 
     <div class="field">
       <%= f.label :headline %>
-      <%= f.text_field :headline %>
+      <%= f.text_field :headline, required: true %>
     </div>
 
     <div class="field">
       <%= f.label :bio %>
-      <%= f.text_area :bio %>
+      <%= f.text_area :bio, required: true %>
     </div>
 
     <div class="field">
@@ -23,7 +23,7 @@
 
     <div class="field">
       <%= f.label :city %>
-      <%= f.text_field :city %>
+      <%= f.text_field :city, required: true %>
     </div>
 
     <div class="field">
@@ -38,12 +38,12 @@
 
     <div class="field">
       <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, required: true %>
     </div>
 
     <div class="field">
       <%= f.label :number %>
-      <%= f.number_field :number %>
+      <%= f.number_field :number, required: true %>
     </div>
 
     <div class="field">
@@ -76,14 +76,41 @@
       <%= f.url_field :extra_link %>
     </div>
 
-  
-
     <div class="field">
       <%= f.label :category_id, "Category" %>
-      <%= f.collection_select :category_id, Category.all.collect, :id, :name, prompt: true %>
-      <%# f.text_field :category_id %>
+      <%= f.collection_select :category_id, Category.all.collect, :id, :name,required: true %>
+    </div>
+
+    <div id="tags-div" class="field">
+    <p>Types</p><br>
+    <%= f.collection_check_boxes :tag_ids, Tag.where(category_id: 1), :id, :name %>
     </div>
 
     <%= f.submit "Add", class: "submit" %>
   <% end %>
+
+  <script>
+    document.querySelector(".field select").addEventListener("change", changeTags);
+
+    function changeTags(e){
+      const categoryId = e.target.value;
+      const tagsDiv = document.querySelector("#tags-div");
+      fetch("/tags?id="+categoryId, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
+      })
+      .then(r => r.json())
+      .then(data => {
+        tagsDiv.innerHTML = "<p>Type:</p><br>";
+        for(let tag of data){
+          let el = `<input type="checkbox" value=${tag.id} name="store[tag_ids][]" id="store_tag_ids_${tag.id}"><label for="store_tag_ids_${tag.id}">${tag.name}</label>`;
+          tagsDiv.innerHTML += el;
+          //console.log(tag.name);
+        }
+      });
+    }
+  </script>
 </div>

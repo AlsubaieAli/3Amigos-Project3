@@ -58,6 +58,9 @@
     <hr>
     <div class="tags-div">
       <h5>Tagged With</h5>
+      <% @store.tags.each do |tag|%>
+      <li class="tags"><%= link_to tag.name, tag %></li>
+      <% end %>
     </div>
 
     <hr>

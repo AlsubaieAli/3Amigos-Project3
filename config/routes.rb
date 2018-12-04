@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :stores
   resources :contact
   devise_for :users
+  get "/search", to: "pages#search"
   root "pages#home"
 end

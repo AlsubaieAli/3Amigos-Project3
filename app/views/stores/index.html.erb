@@ -1,9 +1,31 @@
-<div class="all-stores-div">
+<% if user_signed_in? && current_user.is_admin %>
+<h3><%= link_to "Add New Store", "/stores/new" %></h3>
+
+<h2>Stores index</h2>
+<table>
+<th>ID</th>
+<th>Name</th>
+<th>City</th>
+<th>Email</th>
+<th>Number</th>
+<th>Edit</th>
+<th>Delete</th>
 <% @stores.each do |store| %>
-  <a class="store-div" href=<%= "/stores/#{store.id}" %>>
-    <img class="store-div__img" src="<%= store.images %>" alt="">
-    <h2 class="store-div__title"><%= store.name %></h2>
-    <p class="store-div__headline"><%= store.headline %></p>
-  </a>
+<tr>
+
+<td><%= store.id %></td>
+<td><%= link_to store.name, store %></td>
+<td><%= store.city %></td>
+<td><%= store.email %></td>
+<td><%= store.number %></td>
+<td><%= link_to "Edit", "/stores/#{store.id}/edit" %></td>
+<td><%= link_to "Delete", "/stores/#{store.id}", method: :delete %></td>
+
+</tr>
+  
 <% end %>
-</div>
+</table>
+<% else %>
+<p>You are not authorized to view this page</p>
+<% end %>
+

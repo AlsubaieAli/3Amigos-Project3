@@ -1,2 +1,24 @@
-<h1>Tags#index</h1>
-<p>Find me in app/views/tags/index.html.erb</p>
+<% if user_signed_in? && current_user.is_admin %>
+<h3><%= link_to "Add New Tag", "/tags/new" %></h3>
+<h2>Tags index</h2>
+<table>
+
+<th>ID</th>
+<th>Name</th>
+<th>Category</th>
+<th>Edit</th>
+<th>Delete</th>
+<% @alltags.each do |tag| %>
+<tr>
+<td><%= tag.id %></td>
+<td><%= tag.name %></td>
+<td><%= tag.category.name %></td>
+<td><%= link_to "Edit", "/tags/#{tag.id}/edit" %></td>
+<td><%= link_to "Delete", "/tags/#{tag.id}", method: :delete %></td>
+</tr>
+<% end %>
+</table>
+
+<% else %>
+<p>You are not authorized to view this page</p>
+<% end %>
