@@ -69,7 +69,7 @@
 
     <hr>
     <div class="comments-div">
-      <p>Rate: <%= rating_for @store, "name", disable_after_rate: true, enable_half: true, half_show: true, cancel: false %></p>
+      <p>Rate: <%= rating_for @store, "name" %></p>
       <h5>Comments:</h5>
       <% @store.comments.each do |comment| %>
         <p>- <strong><%= comment.content %></strong> | BY: <%= comment.user.name%> </p>
