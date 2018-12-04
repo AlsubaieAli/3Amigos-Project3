@@ -2,8 +2,8 @@
   <%# f.hidden_field(:store_id, @store.id) %>
   <%= f.hidden_field :store_id, :value => @store.id %>
   <div class="field">
-    <%= f.label :content, 'Write your comment' %>
-    <%= f.text_area :content %>
+    <%= f.label :content, 'Write your comment', class: "span-2" %>
+    <%= f.text_area :content, class: "span-2" %>
   </div>
   <%= f.submit "Send", class: "submit" %>
 <% end %>
