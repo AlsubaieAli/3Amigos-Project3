@@ -82,18 +82,28 @@
     </div>
 
     <div id="tags-div" class="field">
-    <p>Types</p><br>
-    <%= f.collection_check_boxes :tag_ids, Tag.where(category_id: 1), :id, :name %>
+    <%# <p>Types</p><br> %>
+    <%# f.collection_check_boxes :tag_ids, Tag.where(category_id: 1), :id, :name %>
     </div>
 
     <%= f.submit "Add", class: "submit" %>
   <% end %>
 
   <script>
-    document.querySelector(".field select").addEventListener("change", changeTags);
+  
 
+    document.querySelector(".field select").addEventListener("change", changeTags);
+    changeTags();
+    
     function changeTags(e){
-      const categoryId = e.target.value;
+
+        // For selected tags
+      let alltagsids = [];
+      <% @store.tags.each do |t| %>
+        alltagsids.push(<%= t.id %>)
+      <% end  %>
+      
+      const categoryId = document.querySelector("#store_category_id").value;
       const tagsDiv = document.querySelector("#tags-div");
       fetch("/tags?id="+categoryId, {
         method: "GET",
@@ -106,11 +116,16 @@
       .then(data => {
         tagsDiv.innerHTML = "<p>Type:</p><br>";
         for(let tag of data){
-          let el = `<input type="checkbox" value=${tag.id} name="store[tag_ids][]" id="store_tag_ids_${tag.id}"><label for="store_tag_ids_${tag.id}">${tag.name}</label>`;
+          let isChecked = ""
+          if(alltagsids.includes(tag.id)) isChecked = "checked";
+          let el = `
+            <label for="store_tag_ids_${tag.id}">${tag.name} </label>
+            <input type="checkbox" ${isChecked}  value=${tag.id} name="store[tag_ids][]" id="store_tag_ids_${tag.id}">
+            `;
           tagsDiv.innerHTML += el;
-          //console.log(tag.name);
         }
       });
+      // "checked" if @store.tags.include?(tag)
     }
   </script>
 </div>
