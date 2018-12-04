@@ -6,7 +6,6 @@
 #  user_id    :integer
 #  store_id   :integer
 #  content    :string
-#  rate       :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
