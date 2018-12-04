@@ -1,10 +1,20 @@
 <% if user_signed_in? && current_user.is_admin %>
-<h1>Tags index</h1>
+<h3><%= link_to "Add New Tag", "/tags/new" %></h3>
+<h2>Tags index</h2>
 <table>
+
+<th>ID</th>
+<th>Name</th>
+<th>Category</th>
+<th>Edit</th>
+<th>Delete</th>
 <% @alltags.each do |tag| %>
 <tr>
-<td><%= tag.name %></td>
 <td><%= tag.id %></td>
+<td><%= tag.name %></td>
+<td><%= tag.category.name %></td>
+<td><%= link_to "Edit", "/tags/#{tag.id}/edit" %></td>
+<td><%= link_to "Delete", "/tags/#{tag.id}", method: :delete %></td>
 </tr>
 <% end %>
 </table>

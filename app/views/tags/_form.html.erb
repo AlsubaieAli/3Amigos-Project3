@@ -1,0 +1,19 @@
+<div class="container">
+
+  <h2>Add new tag</h2>
+  <%= form_for @tag do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :category_id, "Category" %>
+      <%= f.collection_select :category_id, Category.all.collect, :id, :name,required: true %>
+      <%# f.text_field :category_id %>
+    </div>
+
+    <%= f.submit "Add", class: "submit" %>
+  <% end %>
+
+</div>
