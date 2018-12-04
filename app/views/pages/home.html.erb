@@ -1,16 +1,75 @@
 <div class="home-page">
-<h2 class="home-title">Welcome to Party Planner</h2>
-<p style="text-align:center">You can find all the information you need for planning your party</p>
+  <div class="home-title">
+    <h2>Welcome to Party Planner</h2>
+    <p>You can find all the information you need for planning your party</p>
+  </div>
 
-<hr>
-<h2>Recently Joined the Party Planner Family</h2>
-<div class="all-stores-div">
-<% @stores.reverse.first(3).each do |store| %>
-  <a class="store-div" href=<%= "/stores/#{store.id}" %>>
-    <img class="store-div__img" src="<%= store.images %>" alt="">
-    <h2 class="store-div__title"><%= store.name %></h2>
-    <p class="store-div__headline"><%= store.headline %></p>
-  </a>
-<% end %>
+  <hr>
+  <form class="search-form">
+    <div class="field">
+      <input type="text" placeholder="Search" id="search-input" autofocus>
+      <input type="submit" value="Search" class="submit">
+    </div>
+  </form>
+  <hr>
+  
+  <div id="search-results">
+  </div>
+  <h3>Recently Joined the Party Planner Family</h3>
+  <div class="all-stores-div">
+    <% @stores.reverse.first(4).each do |store| %>
+      <a class="store-div" href=<%= "/stores/#{store.id}" %>>
+        <img class="store-div__img" src="<%= store.images %>" alt="">
+        <h2 class="store-div__title"><%= store.name %></h2>
+        <p class="store-div__headline"><%= store.headline %></p>
+      </a>
+    <% end %>
+  </div>
 </div>
-</div>
+
+<script>
+  document.querySelector(".search-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const term = document.querySelector("#search-input").value;
+    const result = document.querySelector("#search-results");
+    let el = "Loading...";
+    result.innerHTML = el;
+    const path = '/search';
+    const params = `?term=${term}`;
+    const options = {
+      method: "GET",
+      header: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    }
+    const url = path + params;
+    fetch(url, options)
+      .then(r => r.json())
+      .then(data => {
+        result.innerHTML = "";
+        el = document.createElement("h3");
+        el.innerHTML = `Results of: ${term}`;
+        result.appendChild(el);
+
+        resultContainer = document.createElement("div");
+        resultContainer.classList.add("all-stores-div");
+        resultContainer.innerHTML = "";
+        if(data.length === 0){
+          resultContainer.innerHTML = "No match found";
+        } else {
+          for(let store of data){
+          
+            resultContainer.innerHTML += `
+              <a class="store-div" href="/stores/${store.id}">
+                <img class="store-div__img" src="${store.images.url}" alt="">
+                <h2 class="store-div__title">${store.name}</h2>
+                <p class="store-div__headline">${store.headline}</p>
+              </a>
+            `;
+          }
+        }
+        result.appendChild(resultContainer);
+      });
+  });
+</script>
