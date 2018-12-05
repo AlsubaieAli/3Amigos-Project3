@@ -16,3 +16,5 @@
 //= require ratyrate
 //= require turbolinks
 //= require_tree .
+
+let mapIsToggled = false;
