@@ -1,19 +1,13 @@
 
 <div class="filter-bar">
-  <form>
-    <% @category.tags.each do |tag| %>
-      <div class="tags-filter">
-        <input type="checkbox" id="<%= tag.id %>">
-        <label for="<%= tag.id %>"><%= tag.name.upcase %></label>
-      </div>
-    <% end %>
-  </form>
-  <button class="toggle-btn">
-    <i class="fas fa-map-marked-alt"></i>
-  </button>
+  <div class="change-view">
+    <p>Change View:</p>
+    <button class="fas fa-map-marked toggle-btn" id="toggle-map-btn" onclick="toggleMapView()">
+    </button>
+  </div>
 </div>
-
-<div class="all-stores-div">
+<hr>
+<div class="all-stores-div" id="grid-view">
   <% @stores.each do |store| %>
     <a class="store-div" href=<%= "/stores/#{store.id}" %>>
       <img class="store-div__img" src="<%= store.images %>" alt="">
@@ -23,12 +17,34 @@
   <% end %>
 </div>
 
-<div  class="map" id="map"></div>
+<div  class="map" id="map" hidden></div>
 
 
 
 
 <script>
+  let mapIsToggled = false;
+  
+  function toggleMapView(){
+    const btn = document.querySelector("#toggle-map-btn");
+    const gridView = document.querySelector("#grid-view");
+    const mapView = document.querySelector("#map");
+    
+    if(mapIsToggled){
+      btn.classList.remove("fa-th-large");
+      btn.classList.add("fa-map-marked");
+      gridView.style.display = "block";
+      mapView.style.display = "none";
+    } else {
+      btn.classList.remove("fa-map-marked");
+      btn.classList.add("fa-th-large");
+      mapView.style.display = "block";
+      gridView.style.display = "none";
+    }
+
+    mapIsToggled = !mapIsToggled;
+  }
+
   function initMap() {
     <%if @stores.last != nil %>
       var myLatLng = {lat: <%= @stores.last.latitude %>, lng: <%= @stores.last.longitude %>};
