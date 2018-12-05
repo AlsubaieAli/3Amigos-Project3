@@ -17,4 +17,4 @@
 //= require turbolinks
 //= require_tree .
 
-let mapIsToggled = false;
+var mapIsToggled = false;
