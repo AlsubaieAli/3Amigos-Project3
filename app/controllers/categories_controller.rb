@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    cat = Category.find_by(id: params[:id])
-    @stores = cat.stores
+    @category = Category.find_by(id: params[:id])
+    @stores = @category.stores
   end
 end
