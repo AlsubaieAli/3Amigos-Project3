@@ -17,7 +17,7 @@
   </div>
   <h3>Recently Joined the Party Planner Family</h3>
   <div class="all-stores-div">
-    <% @stores.reverse.first(4).each do |store| %>
+    <% @stores.last(4).reverse_each do |store| %>
       <a class="store-div" href=<%= "/stores/#{store.id}" %>>
         <img class="store-div__img" src="<%= store.images %>" alt="">
         <h2 class="store-div__title"><%= store.name %></h2>
