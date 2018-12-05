@@ -17,7 +17,7 @@
   <% end %>
 </div>
 
-<div  class="map" id="map" hidden></div>
+<div  class="map hide" id="map"></div>
 
 
 
@@ -33,13 +33,17 @@
     if(mapIsToggled){
       btn.classList.remove("fa-th-large");
       btn.classList.add("fa-map-marked");
-      gridView.style.display = "block";
-      mapView.style.display = "none";
+      gridView.classList.remove("hide");
+      mapView.classList.add("hide");
+      //gridView.style.display = "block";
+      //mapView.style.display = "none";
     } else {
       btn.classList.remove("fa-map-marked");
       btn.classList.add("fa-th-large");
-      mapView.style.display = "block";
-      gridView.style.display = "none";
+      gridView.classList.add("hide");
+      mapView.classList.remove("hide");
+      //mapView.style.display = "block";
+      //gridView.style.display = "none";
     }
 
     mapIsToggled = !mapIsToggled;

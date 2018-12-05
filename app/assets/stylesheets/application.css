@@ -461,3 +461,7 @@ table, td, tr, th {
 	width: 70%;
 }
 
+.hide{
+	display: none;
+}
+
