@@ -69,8 +69,12 @@
 
     <hr>
     <div class="comments-div">
+<<<<<<< HEAD
       <p>Rate: <% rating_for @store, "name" %></p>
       
+=======
+      <p>Rate: <%= rating_for @store, "name", disable_after_rate: true, star_path: "", star_on: image_path("star-on.png"), star_off: image_path("star-off.png"), star_half: image_path("star-half.png"), cancel_on: image_path("cancel-on.png"), cancel_off: image_path("cancel-off.png")  %></p>
+>>>>>>> 662e18a93cc6b61f32ed02f73dd52d343741396f
       <h5>Comments:</h5>
       <% @store.comments.each do |comment| %>
         <p>- <strong><%= comment.content %></strong> | BY: <%= comment.user.name%> </p>
